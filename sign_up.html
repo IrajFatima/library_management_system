@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="../../../bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background-color: var(--dark);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-5 ">
+            <div class="flex-fill  w-100 ">
+                <h1 class="pt-4 text-center text-bold login-heading">Welcome To Library Portal</h1>
+                <p class="pb-4 text-center login-content"><i>Your Gateway to Unlimited Knowledge.</i></p>
+            </div>
+            <div class="login-container  w-100">
+                <div>
+                    <h2 class="text-center m-2 py-3">Sign Up</h2>
+                    <hr>
+                    <form>
+                        <div>
+                            <label for="username" class="py-2"><strong>Username</strong></label> <br>
+                            <input type="text" placeholder="Username" class="w-100 p-1"><br>
+                            <label for="Email" class="py-2"><strong>Email</strong></label> <br>
+                            <input type="email" placeholder="Email" class="w-100 p-1"><br>
+                            <label for="Phone Number" class="py-2"><strong>Phone Number</strong></label> <br>
+                            <input type="tel" placeholder="Phone Number" class="w-100 p-1"><br>
+                            <label for="password" class="py-2" ><strong>Password</strong></label> <br>
+                            <input type="password" placeholder="Password"class="w-100 p-1">
+                            <label for="Role" class="py-2"><strong>Role</strong></label> <br>
+                            <label>
+                                <input type="radio" name="Role" id="1">
+                                Librarian
+                            </label>
+                            <label>
+                                <input type="radio" name="Role" id="2">
+                                Student
+                            </label>
+                        </div>
+                        <div class="btn btn-success rounded-0 mt-3 w-100"><a href="home.html"style="text-decoration: none; color: white;" >Create Account</div>
+                        <div class="btn btn-primary rounded-0 mt-3 w-100"><a href="index.html" style="text-decoration: none; color: white;" >Login</a></div>
+                        <p class="text-center pt-3">By creating account you agree to our &copy; terms and conditions 
+                            <br>
+                        Already Registered? <a href="index.html" style="text-decoration: none;">Login</a> to explore.</p>
+                        
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</body>
+</html>

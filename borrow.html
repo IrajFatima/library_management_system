@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+     <link rel="stylesheet" href="../../../bootstrap.css">
+     <link rel="stylesheet" href="css/style.css">
+     <style>
+        .heading{
+            background-color: var(--purple);
+        }
+     </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">Library Portal</a>
+          <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us" tabindex="-1" >About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" >Support</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Browse</a>
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                  <li><a class="dropdown-item" href="#">Subjects</a></li>
+                  <li><a class="dropdown-item" href="#">Trending</a></li>
+                  <li><a class="dropdown-item" href="#">New Arrival</a></li>
+                  <li><a class="dropdown-item" href="#">Collections</a></li>
+                  <li><a class="dropdown-item" href="#">Random Book</a></li>
+                  <li><a class="dropdown-item" href="#book-search">Advanced Search</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="input-group" style="width: 400px;">
+                <select 
+                    class="form-select rounded-0 bg-dark text-white" 
+                    style="max-width: 100px;" 
+                    aria-label="Search filter">
+                    <option value="all" selected>All</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="genre">Genre</option>
+                </select>
+                <input 
+                    type="text" 
+                    class="form-control rounded-0 " 
+                    placeholder="Search here..." 
+                    aria-label="Search bar">
+                <button class="btn btn-primary rounded-0" type="button">Search</button>
+            </div>
+            
+          </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="m-3 p-4 text-center heading">Borrow Book</h1>
+        <hr>
+        <div class="m-3 d-flex flex-column flex-md-row " style="color: black;">
+            <div style="width: 50%;" class="p-4">
+                <img src="images/th (3).jfif" alt="book image" width="100%">
+            </div>
+            <div style="width: 50%;" class="p-4 mx-2">
+                <h1>Book Name</h1>
+                <h5>Written by Author</h5>
+                <p>Availability: <b>In stock</b></p>
+                <p>Genre: <b>Fantasy</b></p>
+                <p>Publication Year: <b>2014</b></p>
+                <p>Available at Rack no. <b>2</b></p>
+                <p>Shelf no. : <b>3</b></p>
+                <label for="datePicker">Set a due date:</label>
+                <input type="date" id="datePicker" class="m-2"> <br>
+                <button class="btn btn-primary rounded-0 my-3">Borrow Now</button>
+                <br>
+                <span><b>Note:</b><i>The book you borrow have to be return within the due that otherwise you will be charged fine. The borrowed book should be in good condition otherwise a penalty will be imposed.</i></span>
+            </div>
+        </div>
+        <div style="color: black;">
+            <hr>
+            <h1 class="m-3 text-center p-3 pb-4">Your Borrowing History</h1>
+            <hr>
+            <div class="card-group">
+                <div class="card mx-5 mb-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                    <img src="images/th (1).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                    <div class="card-body">
+                      <h5 class="card-title">Book Title</h5>
+                      <p class="card-text">Written by Authur <br>
+                      Due Date: 8/9/2023</p>
+                      <a href="#" class="btn btn-success disabled rounded-0 w-100">Returned</a>
+                    </div>
+                  </div>
+                <div class="card mx-5 mb-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                    <img src="images/th (5).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                    <div class="card-body">
+                      <h5 class="card-title">Book Title</h5>
+                      <p class="card-text">Written by Authur <br>
+                      Due Date: 20/12/2024</p>
+                      <a href="#" class="btn btn-primary rounded-0 w-100">Return</a>
+                    </div>
+                  </div>
+                <div class="card mx-5 mb-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                    <img src="images/th (4).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                    <div class="card-body">
+                      <h5 class="card-title">Book Title</h5>
+                      <p class="card-text">Written by Authur <br>
+                      Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                      <a href="#" class="btn btn-danger rounded-0 w-100">Return</a>
+                    </div>
+                  </div>
+                <div class="card mx-5 mb-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                    <img src="images/th.jfif" class="card-img-top p-4 border border-3" alt="book 1" width="80%" >
+                    <div class="card-body">
+                      <h5 class="card-title">Book Title</h5>
+                      <p class="card-text">Written by Authur <br>
+                      Due Date: 1/12/2024 <br><b>Due Date approaching soon.</b></p>
+                      <a href="#" class="btn btn-success rounded-0 w-100">Return</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Get today's date
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const dd = String(today.getDate()).padStart(2, '0');
+        const minDate = `${yyyy}-${mm}-${dd}`;
+    
+        // Get the date two months from today
+        const twoMonthsFromToday = new Date(today);
+        twoMonthsFromToday.setMonth(twoMonthsFromToday.getMonth() + 2);
+        const yyyyMax = twoMonthsFromToday.getFullYear();
+        const mmMax = String(twoMonthsFromToday.getMonth() + 1).padStart(2, '0');
+        const ddMax = String(twoMonthsFromToday.getDate()).padStart(2, '0');
+        const maxDate = `${yyyyMax}-${mmMax}-${ddMax}`;
+    
+        // Set the min and max attributes of the input
+        const datePicker = document.getElementById('datePicker');
+        datePicker.min = minDate;
+        datePicker.max = maxDate;
+      </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+</html>

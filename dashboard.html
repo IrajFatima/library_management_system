@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+     <link rel="stylesheet" href="../../../bootstrap.css">
+     <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">Library Portal</a>
+          <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us" tabindex="-1" >About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" >Support</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Browse</a>
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                  <li><a class="dropdown-item" href="#">Subjects</a></li>
+                  <li><a class="dropdown-item" href="#">Trending</a></li>
+                  <li><a class="dropdown-item" href="#">New Arrival</a></li>
+                  <li><a class="dropdown-item" href="#">Collections</a></li>
+                  <li><a class="dropdown-item" href="#">Random Book</a></li>
+                  <li><a class="dropdown-item" href="#book-search">Advanced Search</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="input-group" style="width: 400px;">
+                <select 
+                    class="form-select rounded-0 bg-dark text-white" 
+                    style="max-width: 100px;" 
+                    aria-label="Search filter">
+                    <option value="all" selected>All</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="genre">Genre</option>
+                </select>
+                <input 
+                    type="text" 
+                    class="form-control rounded-0 " 
+                    placeholder="Search here..." 
+                    aria-label="Search bar">
+                <button class="btn btn-primary rounded-0" type="button">Search</button>
+            </div>
+            
+          </div>
+        </div>
+    </nav>
+    <main style="color: black;">
+        <h1 class="text-center py-3 m-2">Dashboard</h1>
+        <hr>
+        <section>
+            <div class="d-flex flex-column flex-md-row m-2 p-4 gap-1" >
+                <div class=" border border-2 border-black p-3" style="width: 70%; overflow: scroll; height: 100vh;">
+                    <h2 class="text-center">All Books</h2>
+                    <hr>
+                    <div class="w-100">
+                        <input type="text" placeholder="Book Title" style="width: 15%;" class="p-1">
+                        <input type="text" placeholder="author name" style="width: 15%;"  class="p-1"> 
+                        <select class="p-1 my-3" style="width: 20%;">
+                            <!-- IT-Specific Genres -->
+                            <option value="select">Select a Genre</option>
+                            <option value="programming">Programming & Software Development</option>
+                            <option value="data-science">Data Science & Analytics</option>
+                            <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="cloud-computing">Cloud Computing</option>
+                            <option value="networking">Networking & Telecommunications</option>
+                            <option value="operating-systems">Operating Systems</option>
+                            <option value="database-management">Database Management</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-development">Mobile App Development</option>
+                            <option value="devops">DevOps & Automation</option>
+                            <option value="game-development">Game Development</option>
+                            <option value="project-management">IT Project Management</option>
+                            <option value="blockchain">Blockchain & Cryptocurrency</option>
+                            <option value="iot">Embedded Systems & IoT</option>
+                        
+                            <!-- Broader Technology-Related Genres -->
+                            <option value="computer-science">Computer Science Fundamentals</option>
+                            <option value="tech-trends">Technology Trends & Innovations</option>
+                            <option value="engineering">Engineering & Electronics</option>
+                            <option value="hci">Human-Computer Interaction</option>
+                            <option value="vr-ar">Virtual Reality & Augmented Reality</option>
+                            <option value="big-data">Big Data</option>
+                            <option value="software-testing">Software Testing & Quality Assurance</option>
+                            <option value="it-law">IT Law & Ethics</option>
+                            <option value="it-certifications">IT Certifications</option>
+                            <option value="digital-marketing">Digital Marketing & SEO</option>
+                        
+                            <!-- Professional Development Genres -->
+                            <option value="career-development">Career Development in IT</option>
+                            <option value="leadership">Leadership in Technology</option>
+                            <option value="technical-writing">Technical Writing & Documentation</option>
+                            <option value="agile-scrum">Agile & Scrum Methodologies</option>
+                            <option value="problem-solving">Problem-Solving & Algorithms</option>
+                        </select>
+                        <select  style="width: 20%;" class="p-1">
+                            <option value="all" selected>All</option>
+                            <option value="available">Available Now</option>
+                            <option value="checked-out">Checked Out</option>
+                            <option value="reserved">Reserved</option>
+                            <option value="on-hold">On Hold</option>
+                            <option value="new-arrivals">New Arrivals</option>
+                            <option value="e-books">E-Books</option>
+                            <option value="physical-books">Physical Books</option>
+                        </select>
+                        <select id="publication-year" style="width: 25%;" class="p-1">
+                        </select>
+                    </div>
+                    <div class="books">
+                        <div class="card-group">
+                            <div class="card  m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (1).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                                    <button class="btn btn-danger rounded-0 w-100 my-1">Remove</button>
+
+                                </div>
+                            </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (5).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                                    <button class="btn btn-danger rounded-0 w-100 my-1">Remove</button>
+
+                                </div>
+                              </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (4).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                    <button class="btn btn-danger rounded-0 w-100 my-1">Remove</button>
+
+
+                                </div>
+                              </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th.jfif" class="card-img-top p-4 border border-3" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                    <button class="btn btn-danger rounded-0 w-100 my-1">Remove</button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="card-group">
+                            <div class="card  m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (1).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                </div>
+                            </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (5).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                </div>
+                              </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th (4).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                </div>
+                              </div>
+                            <div class="card m-2 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                                <img src="images/th.jfif" class="card-img-top p-4 border border-3" alt="book 1" width="80%" >
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-success rounded-0 w-100">Update</button>
+                                </div>
+                              </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div  style="width: 30%; overflow: auto;">
+                    <div class=" border border-2 border-black p-3" style="width: 100%; height: auto;">
+
+                        <h2 class="text-center">Add A Book</h2>
+                        <hr>
+                        <input class="form-control rounded-0 border-black my-2" type="text" placeholder="Book Title">
+                        <input class="form-control rounded-0 border-black" type="text" placeholder="Author Name">
+                        <select class="p-2 my-2 form-select rounded-0 border-black">
+                            <!-- IT-Specific Genres -->
+                            <option value="select">Select a Genre</option>
+                            <option value="programming">Programming & Software Development</option>
+                            <option value="data-science">Data Science & Analytics</option>
+                            <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="cloud-computing">Cloud Computing</option>
+                            <option value="networking">Networking & Telecommunications</option>
+                            <option value="operating-systems">Operating Systems</option>
+                            <option value="database-management">Database Management</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-development">Mobile App Development</option>
+                            <option value="devops">DevOps & Automation</option>
+                            <option value="game-development">Game Development</option>
+                            <option value="project-management">IT Project Management</option>
+                            <option value="blockchain">Blockchain & Cryptocurrency</option>
+                            <option value="iot">Embedded Systems & IoT</option>
+                        
+                            <!-- Broader Technology-Related Genres -->
+                            <option value="computer-science">Computer Science Fundamentals</option>
+                            <option value="tech-trends">Technology Trends & Innovations</option>
+                            <option value="engineering">Engineering & Electronics</option>
+                            <option value="hci">Human-Computer Interaction</option>
+                            <option value="vr-ar">Virtual Reality & Augmented Reality</option>
+                            <option value="big-data">Big Data</option>
+                            <option value="software-testing">Software Testing & Quality Assurance</option>
+                            <option value="it-law">IT Law & Ethics</option>
+                            <option value="it-certifications">IT Certifications</option>
+                            <option value="digital-marketing">Digital Marketing & SEO</option>
+                        
+                            <!-- Professional Development Genres -->
+                            <option value="career-development">Career Development in IT</option>
+                            <option value="leadership">Leadership in Technology</option>
+                            <option value="technical-writing">Technical Writing & Documentation</option>
+                            <option value="agile-scrum">Agile & Scrum Methodologies</option>
+                            <option value="problem-solving">Problem-Solving & Algorithms</option>
+                        </select>
+                        <input type="number" min="1" placeholder="Available no. of Copies" class="form-control rounded-0 border-black my-2">
+                        <label for="location"> <b>Location: </b></label>
+                        <input type="number"  placeholder="Rack No." class="form-control rounded-0 border-black my-2">
+                        <input type="number"placeholder="Shelf No." class="form-control rounded-0 border-black my-2">
+                        
+                        <label for="image"> <b>Insert the book Image: </b></label>
+                        <input type="file"><br>
+                        <button class="btn btn-primary rounded-0 my-2 w-100">Add Book</button>
+                    </div>
+                    <div class=" border border-2 border-black p-3" style="width: 100%; height: auto;" >
+                        <h4 class="text-center">Reports Generation</h4>
+                        <button class="btn btn-secondary rounded-0 w-100 mt-1" >Generate Inventory Report</button>
+                        <button class="btn btn-secondary rounded-0 w-100 mt-1" >Generate Borrowed Books Report</button>
+                        <button class="btn btn-secondary rounded-0 w-100 mt-1" >Generate overdue books and fines Report</button>
+                        <button class="btn btn-secondary rounded-0 w-100 mt-1" >Generate collected fines Report</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div>
+                <hr>
+                <h1 class="text-center m-2">List of overdue Books</h1>
+                <hr>
+                <div style="background-color: var(--blue);" class="p-2 m-1">
+                    <h4 class="text-center text-white">Total Fine calculated: <Strong>Rs. 12000</Strong></h4>
+                </div>
+                <div >
+                    <div class="card-group">
+                        <div class="card m-3 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                            <img src="images/th (4).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                            <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Written by Authur <br>Borrowed By : <strong>Username123</strong><br>Lending Date: 2/8/2024 <br>
+                            Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                            </div>
+                        </div>
+                        <div class="card m-3 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                            <img src="images/th (1).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                            <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Written by Authur <br>Borrowed By : <strong>Tom</strong><br>Lending Date: 2/8/2024 <br>
+                            Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                            </div>
+                        </div>
+                        <div class="card m-3 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                            <img src="images/th (6).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                            <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Written by Authur <br>Borrowed By : <strong>Username123</strong><br>Lending Date: 2/8/2024 <br>
+                            Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                            </div>
+                        </div>
+                        <div class="card m-3 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                            <img src="images/th (5).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                            <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Written by Authur <br>Borrowed By : <strong>XYZ</strong><br>Lending Date: 2/8/2024 <br>
+                            Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                            </div>
+                        </div>
+                        <div class="card m-3 px-2 rounded-0 text-center" style="width: 18rem; box-shadow: 1px 2px 3px ,-1px -2px 3px;" >
+                            <img src="images/th (5).jfif" class="card-img-top p-4" alt="book 1" width="80%" >
+                            <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Written by Authur <br>Borrowed By : <strong>John</strong><br>Lending Date: 2/8/2024 <br>
+                            Due Date: 3/10/2024<b>(exceeded) </b><br>Fine: <b>Rs.150</b> (Rs.5/week)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Update</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2 class="text-center">Update the Book</h2>
+                    <hr>
+                    <input class="form-control rounded-0 border-black my-2" type="text" value="The spider">
+                    <input class="form-control rounded-0 border-black" type="text" value="G george">
+                    <select class="p-2 my-2 form-select rounded-0 border-black">
+                        <!-- IT-Specific Genres -->
+                        <option value="select">Fiction</option>
+                        <option value="programming">Programming & Software Development</option>
+                        <option value="data-science">Data Science & Analytics</option>
+                        <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="cloud-computing">Cloud Computing</option>
+                        <option value="networking">Networking & Telecommunications</option>
+                        <option value="operating-systems">Operating Systems</option>
+                        <option value="database-management">Database Management</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="mobile-development">Mobile App Development</option>
+                        <option value="devops">DevOps & Automation</option>
+                        <option value="game-development">Game Development</option>
+                        <option value="project-management">IT Project Management</option>
+                        <option value="blockchain">Blockchain & Cryptocurrency</option>
+                        <option value="iot">Embedded Systems & IoT</option>
+                    
+                        <!-- Broader Technology-Related Genres -->
+                        <option value="computer-science">Computer Science Fundamentals</option>
+                        <option value="tech-trends">Technology Trends & Innovations</option>
+                        <option value="engineering">Engineering & Electronics</option>
+                        <option value="hci">Human-Computer Interaction</option>
+                        <option value="vr-ar">Virtual Reality & Augmented Reality</option>
+                        <option value="big-data">Big Data</option>
+                        <option value="software-testing">Software Testing & Quality Assurance</option>
+                        <option value="it-law">IT Law & Ethics</option>
+                        <option value="it-certifications">IT Certifications</option>
+                        <option value="digital-marketing">Digital Marketing & SEO</option>
+                    
+                        <!-- Professional Development Genres -->
+                        <option value="career-development">Career Development in IT</option>
+                        <option value="leadership">Leadership in Technology</option>
+                        <option value="technical-writing">Technical Writing & Documentation</option>
+                        <option value="agile-scrum">Agile & Scrum Methodologies</option>
+                        <option value="problem-solving">Problem-Solving & Algorithms</option>
+                    </select>
+                    <input type="number" min="1" value="7" class="form-control rounded-0 border-black my-2">
+                    <select class="form-select rounded-0 border-black my-2">
+                        <option value="27">2014</option>
+                    </select>
+                    <label for="location"> <b>Location: </b></label>
+                    <input type="number"  value="1" class="form-control rounded-0 border-black my-2">
+                    <input type="number" value="3" class="form-control rounded-0 border-black my-2">
+                    <label for="image"> <b>Insert the book Image: </b></label>
+                    <input type="file">
+                    <img src="images/th (1).jfif" alt="image" width="20px">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+    
+        // Reference the dropdown
+        const selectElement = document.getElementById("publication-year");
+        const option =document.createElement("option");
+        option.value="allyears";
+        option.textContent="Select publication Year";
+        selectElement.appendChild(option);
+    
+        // Generate options for all years from the current year back to 1950
+        for (let year = currentYear; year >= 1950; year--) {
+            const option = document.createElement("option");
+            option.value = year; // Use the year as the value
+            option.textContent = year; // Display the year as the text
+            selectElement.appendChild(option);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+</html>

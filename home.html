@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+     <link rel="stylesheet" href="../../../bootstrap.css">
+     <link rel="stylesheet" href="css/style.css">
+     <style>
+        nav{
+            color: white;
+        }
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        .content-container{
+            background-color: var(--blue);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 89%);
+
+        }
+        .book-search{
+            background-color: var(--dark);
+            clip-path: polygon(0 13%, 100% 0, 100% 100%, 0 100%);
+
+        }
+     </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">Library Portal</a>
+          <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us" tabindex="-1" >About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" >Support</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Browse</a>
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                  <li><a class="dropdown-item" href="#">Subjects</a></li>
+                  <li><a class="dropdown-item" href="#">Trending</a></li>
+                  <li><a class="dropdown-item" href="#">New Arrival</a></li>
+                  <li><a class="dropdown-item" href="#">Collections</a></li>
+                  <li><a class="dropdown-item" href="#">Random Book</a></li>
+                  <li><a class="dropdown-item" href="#book-search">Advanced Search</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="input-group" style="width: 400px;">
+                <select 
+                    class="form-select rounded-0 bg-dark text-white" 
+                    style="max-width: 100px;" 
+                    aria-label="Search filter">
+                    <option value="all" selected>All</option>
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="genre">Genre</option>
+                </select>
+                <input 
+                    type="text" 
+                    class="form-control rounded-0 " 
+                    placeholder="Search here..." 
+                    aria-label="Search bar">
+                <button class="btn btn-primary rounded-0" type="button">Search</button>
+            </div>
+            
+          </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="content-container">
+            <div class="d-flex flex-column flex-md-row ">
+                <div class=" p-5 mt-4" >
+                    <h1 class="text-bold">
+                        Streamline Library Operations Effortlessly
+                    </h1>
+                    <p class="py-2">Empower Your Library with Seamless Management and Redefine Book Exchanges Enhancing Every Reader's Journey.</p>
+                    <button class="btn btn-outline-secondary rounded-0 py-2 my-2"><a href="#" style="text-decoration: none; color: white;">Explore Books</a></button>
+                </div>
+                <div class="flex-fill">
+                    <img src="images/DALL·E 2024-11-27 16.04.53 - A digital illustration of a laptop keyboard with a hand hovering over the mouse. In front of the laptop, there is a floating semi-transparent interfac.webp" alt="Intro image" width="100%" height="auto" class="p-5">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about-us" id="about-us">
+            <div>
+                <h1 class="text-dark text-center p-3 pt-3 m-4 mt-4 ">Revolutionizing Book Exchange Systems</h1>
+                <p class="text-dark text-center pb-5 px-5 p-2  mx-auto text-wrap" style="width: 50vw;">At Library Portal, we are redefining how books are exchanged and accessed. Our platform bridges the gap between technology and traditional libraries, offering readers a seamless way to explore, borrow, and share books. With intuitive search tools, a vast collection of titles, and a commitment to fostering a love for reading, we empower communities to connect and grow through the power of literature. Join us in revolutionizing the book exchange experience and discover a smarter, more engaging way to read.</p>
+            </div>
+        </section>
+
+        <section class="book-search" id="book-search">
+            <div class="d-flex flex-column flex-md-row ">
+
+                <div class="p-5">
+                    <h2 class="my-5 py-5" >Advanced Search For A Book</h2>
+                    <select class="p-2 my-3" style="width: 30vw;">
+                        <!-- IT-Specific Genres -->
+                        <option value="select">Select a Genre</option>
+                        <option value="programming">Programming & Software Development</option>
+                        <option value="data-science">Data Science & Analytics</option>
+                        <option value="ai-ml">Artificial Intelligence & Machine Learning</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="cloud-computing">Cloud Computing</option>
+                        <option value="networking">Networking & Telecommunications</option>
+                        <option value="operating-systems">Operating Systems</option>
+                        <option value="database-management">Database Management</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="mobile-development">Mobile App Development</option>
+                        <option value="devops">DevOps & Automation</option>
+                        <option value="game-development">Game Development</option>
+                        <option value="project-management">IT Project Management</option>
+                        <option value="blockchain">Blockchain & Cryptocurrency</option>
+                        <option value="iot">Embedded Systems & IoT</option>
+                    
+                        <!-- Broader Technology-Related Genres -->
+                        <option value="computer-science">Computer Science Fundamentals</option>
+                        <option value="tech-trends">Technology Trends & Innovations</option>
+                        <option value="engineering">Engineering & Electronics</option>
+                        <option value="hci">Human-Computer Interaction</option>
+                        <option value="vr-ar">Virtual Reality & Augmented Reality</option>
+                        <option value="big-data">Big Data</option>
+                        <option value="software-testing">Software Testing & Quality Assurance</option>
+                        <option value="it-law">IT Law & Ethics</option>
+                        <option value="it-certifications">IT Certifications</option>
+                        <option value="digital-marketing">Digital Marketing & SEO</option>
+                    
+                        <!-- Professional Development Genres -->
+                        <option value="career-development">Career Development in IT</option>
+                        <option value="leadership">Leadership in Technology</option>
+                        <option value="technical-writing">Technical Writing & Documentation</option>
+                        <option value="agile-scrum">Agile & Scrum Methodologies</option>
+                        <option value="problem-solving">Problem-Solving & Algorithms</option>
+                    </select>
+                    <br>
+                    <input type="text" placeholder="Author name..." class="p-1 px-2" style="width: 30vw;"><br>
+                    <input type="text" placeholder="Book Title..." class="p-1 my-3 px-2" style="width: 30vw;"><br>
+                    <button class="btn btn-secondary rounded-0">Search the Book</button>
+                    
+                </div>
+                <div style="width: 50%; object-fit:initial;">
+                    <img src="images/376152628_249e3630c0_o.jpg" alt="library image" width="140%">
+                </div>
+            </div>
+        </section>
+
+        <section class="search-books" style="color: black;">
+            <div>
+                <h1 class="p-3 m-4" style="color: var(--dark);">Results... <small style="font-size:medium"> for searched book</small></h1>
+                <hr>
+                <section >
+                    <div class="d-flex flex-column flex-md-row">
+                        <select class="form-select m-4" >
+                            <option value="all" selected>All</option>
+                            <option value="available">Available Now</option>
+                            <option value="checked-out">Checked Out</option>
+                            <option value="reserved">Reserved</option>
+                            <option value="on-hold">On Hold</option>
+                            <option value="new-arrivals">New Arrivals</option>
+                            <option value="e-books">E-Books</option>
+                            <option value="physical-books">Physical Books</option>
+                        </select>
+                        <select id="publication-year" class="form-select m-4">
+                        </select>
+                    </div>
+                </section>
+                <section class="books">
+                    <div class="card-group gap-2">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="images/th (1).jfif" class="img-fluid rounded-start" alt="..." width="100%">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Novel</p>
+                                    <button class="btn btn-outline-success rounded-0 ">Borrow</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="images/th (5).jfif" class="img-fluid rounded-start" alt="..." width="100%">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Checked Out</p>
+                                    <p class=""><strong>Publication Year:</strong> 2021</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-outline-success rounded-0 ">Borrow</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="images/th (4).jfif" class="img-fluid rounded-start" alt="..." width="100%">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Title</h5>
+                                    <p class=""><strong>Author:</strong> Author Name</p>
+                                    <p class=""><strong>Availability:</strong> Available</p>
+                                    <p class=""><strong>Publication Year:</strong> 2024</p>
+                                    <p class=""><strong>Genre:</strong> Fiction</p>
+                                    <button class="btn btn-outline-success rounded-0 ">Borrow</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+    
+        // Reference the dropdown
+        const selectElement = document.getElementById("publication-year");
+        const option =document.createElement("option");
+        option.value="allyears";
+        option.textContent="All Years";
+        selectElement.appendChild(option);
+    
+        // Generate options for all years from the current year back to 1950
+        for (let year = currentYear; year >= 1950; year--) {
+            const option = document.createElement("option");
+            option.value = year; // Use the year as the value
+            option.textContent = year; // Display the year as the text
+            selectElement.appendChild(option);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+</html>
